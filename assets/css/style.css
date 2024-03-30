@@ -1,6 +1,377 @@
-*, html, body {
+/* =======================
+VARIABLES
+* ======================= */
+/* colors */
+/* breakpoints */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+/* =======================
+ * Functions CLASS
+ * ======================= */
+* {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+section {
+  position: relative;
+  z-index: 2;
+}
+
+figure {
+  font-size: 0;
+}
+
+img {
+  height: auto;
+  font-size: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  font-size: 18px;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+textarea {
+  font-family: "Roboto", sans-serif;
+}
+
+.m-wysiwygArea {
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0;
+  line-height: 1.7;
+  color: #000;
+}
+@media screen and (max-width: 767px) {
+  .m-wysiwygArea {
+    font-size: 12px;
+  }
+}
+.m-wysiwygArea * + * {
+  margin-top: 1.75em;
+}
+.m-wysiwygArea br + * {
+  margin-top: 0;
+}
+.m-wysiwygArea a {
+  color: blue;
+  text-decoration: underline;
+}
+@media screen and (min-width: 768px) {
+  .m-wysiwygArea a {
+    -webkit-transition: all 0.6s ease 0s;
+    transition: all 0.6s ease 0s;
+  }
+}
+@media screen and (min-width: 768px) {
+  .m-wysiwygArea a:hover {
+    opacity: 0.7;
+  }
+}
+.m-wysiwygArea h1 {
+  font-size: 4.5rem;
+  line-height: 1.4;
+}
+.m-wysiwygArea h2 {
+  font-size: 3rem;
+  line-height: 1.6;
+  margin-top: 2em;
+}
+.m-wysiwygArea h3 {
+  color: blue;
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1.6;
+}
+.m-wysiwygArea h4 {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  padding-left: 25px;
+  position: relative;
+}
+.m-wysiwygArea h4::before {
+  background: blue;
+  content: "";
+  height: 17px;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  width: 17px;
+}
+.m-wysiwygArea h5,
+.m-wysiwygArea h6 {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.m-wysiwygArea h1 + h2,
+.m-wysiwygArea h2 + h3,
+.m-wysiwygArea h3 + h4,
+.m-wysiwygArea h4 + h5,
+.m-wysiwygArea h5 + h6 {
+  margin-top: 0.5em;
+}
+.m-wysiwygArea p {
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0;
+  line-height: 1.7;
+  color: #000;
+}
+@media screen and (max-width: 767px) {
+  .m-wysiwygArea p {
+    font-size: 12px;
+  }
+}
+.m-wysiwygArea strong,
+.m-wysiwygArea strong * {
+  font-weight: bold;
+}
+.m-wysiwygArea em,
+.m-wysiwygArea em * {
+  font-style: italic;
+}
+.m-wysiwygArea ul {
+  list-style-type: disc;
+}
+.m-wysiwygArea ol {
+  list-style-type: decimal;
+}
+.m-wysiwygArea ul,
+.m-wysiwygArea ol {
+  margin-top: 1em;
+  padding-left: 1.4em;
+}
+.m-wysiwygArea ul li,
+.m-wysiwygArea ol li {
+  line-height: 1.5;
+  margin-top: 0.6em;
+}
+.m-wysiwygArea sup,
+.m-wysiwygArea sub {
+  font-size: 1rem;
+  line-height: 1 !important;
+}
+.m-wysiwygArea hr {
+  background: #000;
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+.m-wysiwygArea blockquote {
+  background: blue;
+  padding: 30px;
+}
+.m-wysiwygArea table {
+  background: blue;
+  border-collapse: collapse;
+  height: auto !important;
+  margin-top: 3em;
+  width: 100% !important;
+}
+.m-wysiwygArea table thead th,
+.m-wysiwygArea table thead td {
+  font-weight: bold;
+  text-align: center;
+}
+.m-wysiwygArea table tr th,
+.m-wysiwygArea table tr td {
+  border: #000 1px solid;
+  line-height: 1.5;
+  padding: 15px 20px;
+  text-align: left;
+  vertical-align: middle;
+}
+.m-wysiwygArea table tr th {
+  font-weight: bold;
+  text-align: center;
+  width: 25%;
+}
+.m-wysiwygArea img {
+  height: auto;
+  margin-top: 1em;
+  max-width: 100%;
+  width: auto;
+}
+.m-wysiwygArea img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.m-wysiwygArea img.alignright {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+.m-wysiwygArea .gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.m-wysiwygArea .gallery-item {
+  float: none;
+  margin-top: 0;
+  text-align: center;
+}
+.m-wysiwygArea .gallery-columns-2 .gallery-item {
+  width: calc((100% - 40px) / 2);
+}
+.m-wysiwygArea .gallery-columns-3 .gallery-item {
+  width: calc((100% - 80px) / 3);
+}
+
+/*====================================================================
+COMMON LAYOUT
+====================================================================*/
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+  background-color: #EBEBEB;
+}
+@media screen and (max-width: 1250px) {
+  html {
+    font-size: 0.8vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 2.3364485981vw;
+  }
+}
+
+body {
+  -webkit-font-feature-settings: "palt" 1;
+          font-feature-settings: "palt" 1;
+  overflow-x: hidden;
+  position: relative;
+}
+body.modal-is-active {
+  overflow: hidden;
+}
+body.menu-is-active {
+  overflow: auto;
+}
+@media screen and (max-width: 767px) {
+  body {
+    min-width: inherit;
+    overflow: scroll;
+  }
+}
+
+main {
+  position: relative;
+}
+
+section {
+  z-index: unset;
+}
+
+/*-----------------------------------------------
+PC/SP
+------------------------------------------------*/
+.m-pcDb {
+  display: block;
+}
+
+.m-pcDib {
+  display: inline-block;
+}
+
+.m-pcDin {
+  display: inline;
+}
+
+.m-pcDf {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.m-pcDt {
+  display: table;
+}
+
+.m-pcDtc {
+  display: table-cell;
+}
+
+.m-spDb,
+.m-spDib,
+.m-spDin,
+.m-spDf,
+.m-spDt,
+.m-spDtc {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .m-pcDb,
+  .m-pcDib,
+  .m-pcDin,
+  .m-pcDf,
+  .m-pcDt,
+  .m-pcDtc {
+    display: none;
+  }
+  .m-spDb {
+    display: block;
+  }
+  .m-spDib {
+    display: inline-block;
+  }
+  .m-spDin {
+    display: inline;
+  }
+  .m-spDf {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .m-spDt {
+    display: table;
+  }
+  .m-spDtc {
+    display: table-cell;
+  }
+}
+body {
+  background: #fff;
+}
+
+.siteContent {
+  min-height: 90vh;
+}
+
+.inner__container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 120rem;
+}
+@media screen and (max-width: 767px) {
+  .inner__container {
+    width: 100%;
+    padding: 0 2rem;
+  }
 }
