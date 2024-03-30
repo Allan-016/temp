@@ -1,0 +1,149 @@
+/*====================================================================
+COMMON LAYOUT
+====================================================================*/
+html {
+  font-family: $font--Roboto;
+  font-size: 62.5%; // 1rem = 10px
+  background-color: $body;
+
+  // Liquid
+  @include m-mqMax(1250px) {
+    font-size: calc(10vw / 12.5);
+  }
+
+  // SP
+  @include m-mqMax($maxW: $windowSP) {
+    font-size: calc(10vw / 4.28);
+  }
+
+  // SP
+  // @include m-mqMax {
+  //   font-size: 16px;
+  // }
+}
+
+body {
+  @include fontFeature;
+  overflow-x: hidden;
+  position: relative;
+
+  &.modal-is-active {
+    overflow: hidden;
+  }
+
+  &.menu-is-active {
+    overflow: auto;
+  }
+
+  // SP
+  @include m-mqMax {
+    min-width: inherit;
+    overflow: scroll;
+  }
+}
+
+main {
+  position: relative;
+}
+
+section {
+  z-index: unset;
+}
+
+
+
+
+/*-----------------------------------------------
+PC/SP
+------------------------------------------------*/
+// PC
+.m-pcDb {
+  display: block;
+}
+
+.m-pcDib {
+  display: inline-block;
+}
+
+.m-pcDin {
+  display: inline;
+}
+
+.m-pcDf {
+  display: flex;
+}
+
+.m-pcDt {
+  display: table;
+}
+
+.m-pcDtc {
+  display: table-cell;
+}
+
+.m-spDb,
+.m-spDib,
+.m-spDin,
+.m-spDf,
+.m-spDt,
+.m-spDtc {
+  display: none;
+}
+
+// SP
+@include m-mqMax {
+
+  .m-pcDb,
+  .m-pcDib,
+  .m-pcDin,
+  .m-pcDf,
+  .m-pcDt,
+  .m-pcDtc {
+    display: none;
+  }
+
+  .m-spDb {
+    display: block;
+  }
+
+  .m-spDib {
+    display: inline-block;
+  }
+
+  .m-spDin {
+    display: inline;
+  }
+
+  .m-spDf {
+    display: flex;
+  }
+
+  .m-spDt {
+    display: table;
+  }
+
+  .m-spDtc {
+    display: table-cell;
+  }
+}
+
+
+// ==============================
+body {
+  background: $white;
+}
+
+.siteContent {
+  min-height: 90vh;
+}
+
+.inner__container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 120rem;
+
+  @include m-mqMax {
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
