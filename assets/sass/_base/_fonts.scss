@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-$font--HiraginoMinPro: "hiragino-mincho-pron", sans-serif;
+$font--Poppins: 'Poppins', sans-serif;
 $font--Roboto: "Roboto", sans-serif;
-$font--bebasNeue: "bebas-neue-by-fontfabric", sans-serif;
-$font--Family: $font--HiraginoMinPro, Georgia,游明朝,"Yu Mincho",YuMincho,HGS明朝E,メイリオ,Meiryo,serif;
+$font--Family: $font--Poppins, $font--Roboto, sans-serif;
